@@ -1,0 +1,18 @@
+animals = [
+    "Rat(Shu)",
+    "Ox(Niu)", 
+    "Tiger(Hu)", 
+    "Rabbit(Tu)", 
+    "Dragon(Long)", 
+    "Snake(She)",
+    "Horse(Ma)", 
+    "Goat(Tian)", 
+    "Monkey(Hou)", 
+    "Rooster(Ji)", 
+    "Dog(Gou)", 
+    "Pig(Zhu)"
+]
+
+year = int(input("Enter your birth year: "))
+index = (year - 4) % 12
+print("Your Chinese zodiac is", animals[index])
