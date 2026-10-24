@@ -23,67 +23,61 @@ class Child(Parent):
 obj = Child()
 obj.func1()
 obj.func2()
-
+```
 
 
 # Multilevel Inheritance
+```python
 class Grandfather:
-    def __init__(self, grandfathername):
-        self._grandfathername = grandfathername
+    def __init__(self, name):
+        self._name = name
 
     @property
-    def grandfathername(self):
-        return self._grandfathername
+    def name(self):
+        return self._name
 
-    @grandfathername.setter
-    def grandfathername(self, name):
-        self._grandfathername = name
-
+    @name.setter
+    def name(self, value):
+        self._name = value
 
 class Father(Grandfather):
-    def __init__(self, fathername, grandfathername):
-        self._fathername = fathername
-        super().__init__(grandfathername)
+    def __init__(self, father_name, grandfather_name):
+        super().__init__(grandfather_name)
+        self._father_name = father_name
 
     @property
-    def fathername(self):
-        return self._fathername
+    def father_name(self):
+        return self._father_name
 
-    @fathername.setter
-    def fathername(self, name):
-        self._fathername = name
-
+    @father_name.setter
+    def father_name(self, value):
+        self._father_name = value
 
 class Son(Father):
-    def __init__(self, sonname, fathername, grandfathername):
-        self._sonname = sonname
-        super().__init__(fathername, grandfathername)
+    def __init__(self, son_name, father_name, grandfather_name):
+        super().__init__(father_name, grandfather_name)
+        self._son_name = son_name
 
     @property
-    def sonname(self):
-        return self._sonname
+    def son_name(self):
+        return self._son_name
 
-    @sonname.setter
-    def sonname(self, name):
-        self._sonname = name
+    @son_name.setter
+    def son_name(self, value):
+        self._son_name = value
 
     def print_name(self):
-        print("Grandfather name :", self._grandfathername)
-        print("Father name :", self._fathername)
-        print("Son name :", self._sonname)
-
+        print("Grandfather name :", self.name)
+        print("Father name :", self.father_name)
+        print("Son name :", self.son_name)
 
 s1 = Son('Prince', 'Rampal', 'Lal mani')
-
-s1.sonname = 'Aryan'
-s1.fathername = 'Vikram'
-
-print("Grandfather name accessed via property:", s1.grandfathername)
 s1.print_name()
-
+```
 
 
 # Heirarchical Inheritance
+```python
 class Parent:
     def __init__(self, msg="This function is in parent class."):
         self._msg = msg
@@ -100,45 +94,20 @@ class Parent:
         print(self._msg)
 
 class Child1(Parent):
-    def __init__(self, parent_msg, child1_msg="This function is in child 1."):
-        super().__init__(parent_msg)
-        self._child1_msg = child1_msg
-
-    @property
-    def child1_msg(self):
-        return self._child1_msg
-
-    @child1_msg.setter
-    def child1_msg(self, value):
-        self._child1_msg = value
-
     def func2(self):
-        print(self._child1_msg)
+        print("This function is in child 1.")
 
 class Child2(Parent):
-    def __init__(self, parent_msg, child2_msg="This function is in child 2."):
-        super().__init__(parent_msg)
-        self._child2_msg = child2_msg
-
-    @property
-    def child2_msg(self):
-        return self._child2_msg
-
-    @child2_msg.setter
-    def child2_msg(self, value):
-        self._child2_msg = value
-
     def func3(self):
-        print(self._child2_msg)
+        print("This function is in child 2.")
 
-object1 = Child1("Parent shared with Child 1")
-object2 = Child2("Parent shared with Child 2")
-
-object1.child1_msg = "Modified Child 1 output string."
-object2.msg = "Updated Parent message for Child 2."
+# Testing the code
+object1 = Child1()
+object2 = Child2()
 
 object1.func1()
 object1.func2()
 
 object2.func1()
 object2.func3()
+```
