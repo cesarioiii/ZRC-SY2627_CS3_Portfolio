@@ -24,7 +24,7 @@ class Child(Parent):
 
 obj = Child()
 obj.func1()
-obj.func2()
+obj.func2()```
 
 
 
