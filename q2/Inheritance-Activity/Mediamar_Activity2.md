@@ -1,5 +1,5 @@
 # Single Inheritance
-class Parent:
+#class Parent:
     def __init__(self, parent_message="This function is in parent class."):
         self._parent_message = parent_message  
 
