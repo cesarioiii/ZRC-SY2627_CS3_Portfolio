@@ -1,43 +1,28 @@
 # Single Inheritance
-#class Parent:
-    def __init__(self, parent_message="This function is in parent class."):
-        self._parent_message = parent_message  
+
+In single inheritance, a child class inherits attributes and methods from a single parent class.
+
+```python
+class Parent:
+    def __init__(self, msg="This function is in parent class."):
+        self._msg = msg  # Protected attribute
 
     @property
-    def parent_message(self):
-        """Getter for parent_message"""
-        return self._parent_message
+    def msg(self):
+        return self._msg
 
-    @parent_message.setter
-    def parent_message(self, message):
-        """Setter for parent_message"""
-        self._parent_message = message
+    @msg.setter
+    def msg(self, value):
+        self._msg = value
 
     def func1(self):
-        print(self._parent_message)
+        print(self._msg)
 
 class Child(Parent):
-    def __init__(self, parent_message="This function is in parent class.", child_message="This function is in child class."):
-        super().__init__(parent_message)
-        self._child_message = child_message
-
-    @property
-    def child_message(self):
-        """Getter for child_message"""
-        return self._child_message
-
-    @child_message.setter
-    def child_message(self, message):
-        """Setter for child_message"""
-        self._child_message = message
-
     def func2(self):
-        print(self._child_message)
+        print("This function is in child class.")
 
 obj = Child()
-obj.parent_message = "Updated Parent Message via Property!"
-obj.child_message = "Updated Child Message via Property!"
-
 obj.func1()
 obj.func2()
 
