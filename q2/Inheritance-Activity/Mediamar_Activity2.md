@@ -24,11 +24,11 @@ class Child(Parent):
 
 obj = Child()
 obj.func1()
-obj.func2()
+obj.func2() ```
 
 
 
-`# Multilevel Inheritance`
+# Multilevel Inheritance
 class Grandfather:
     def __init__(self, grandfathername):
         self._grandfathername = grandfathername
