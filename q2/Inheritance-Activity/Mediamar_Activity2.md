@@ -1,11 +1,9 @@
 # Single Inheritance
 
-In single inheritance, a child class inherits attributes and methods from a single parent class.
-
 ```python
 class Parent:
     def __init__(self, msg="This function is in parent class."):
-        self._msg = msg  # Protected attribute
+        self._msg = msg
 
     @property
     def msg(self):
@@ -24,7 +22,7 @@ class Child(Parent):
 
 obj = Child()
 obj.func1()
-obj.func2()` ``` `
+obj.func2()
 
 
 
