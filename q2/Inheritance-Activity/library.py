@@ -105,4 +105,4 @@ print(book1.get_number_of_pages())
 
 print("\nMagazine Information:")
 mag1.display_info()
-print(mag1.get_issue_number())
+print(mag1.get_issue_number()) 
