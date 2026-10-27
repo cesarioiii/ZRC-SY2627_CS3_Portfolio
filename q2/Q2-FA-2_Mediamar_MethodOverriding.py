@@ -4,7 +4,7 @@ class Patient:
         self.__bill_amount = bill_amount
 
     def get_name(self):
-        return self.name
+        return self.__name
 
     def set_name(self, name):
         self.__name = name
@@ -18,9 +18,9 @@ class Patient:
     def calculate_bill(self):
         return self.__bill_amount
 
-
 class SeniorPatient(Patient):
     def __init__(self, name, bill_amount : float):
+        super().__init__(name, bill_amount)
         self.__name = name
         self.__bill_amount = bill_amount
         self.__discount = 0.20
@@ -31,6 +31,7 @@ class SeniorPatient(Patient):
 
 class PhilHealthPatient(Patient):
     def __init__(self, name, bill_amount : float):
+        super().__init__(name, bill_amount)
         self.__name = name
         self.__bill_amount = bill_amount
         self.__discount = 0.15
